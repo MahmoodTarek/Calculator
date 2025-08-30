@@ -88,7 +88,6 @@ class MainActivity : AppCompatActivity() {
         binding.txError.visibility = View.INVISIBLE
 
         adjustTextSize(binding.txOperation)
-        adjustTextSize(binding.txPrevOperation)
     }
 
     private fun resetCalculator() {
@@ -97,7 +96,6 @@ class MainActivity : AppCompatActivity() {
         binding.txError.visibility = View.INVISIBLE
 
         adjustTextSize(binding.txOperation)
-        adjustTextSize(binding.txPrevOperation)
     }
 
     private fun showError() {

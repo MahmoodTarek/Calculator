@@ -15,6 +15,15 @@ UI: View Binding + ConstraintLayout
 Algorithm: Shunting Yard (infix to postfix conversion)
 
 ## Preview
+### Luncher Icon
+![ic](https://github.com/user-attachments/assets/bdfcec27-d476-443a-ba8f-328a4d1064f2)
 
+### Vertical Design
+![vertical](https://github.com/user-attachments/assets/d05e6cdb-779c-487d-aa91-93891f9f0729)
 
-https://github.com/user-attachments/assets/1f44eed1-ac87-4316-bf1a-07c9ee270a33
+### Horizontal Design
+![horizontal](https://github.com/user-attachments/assets/d9eb7789-abef-4298-8c72-e94b4024e85c)
+
+### Video 
+https://github.com/user-attachments/assets/c3bd12ec-d30e-45f9-aea0-9d1ac8d564ac
+

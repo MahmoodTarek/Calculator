@@ -26,4 +26,22 @@
         <item name="android:background">@drawable/white_circle_button</item>
     </style>
 
+    <style name="CalcButtonLand">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:textSize">@dimen/text_medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalcButtonLand.operatorLand" parent="CalcButtonLand">
+        <item name="android:textColor">@color/off_white</item>
+        <item name="android:background">@drawable/orange_circle_button</item>
+    </style>
+
+    <style name="CalcButtonLand.numbersLand" parent="CalcButtonLand">
+        <item name="android:textColor">@color/brown</item>
+        <item name="android:background">@drawable/white_circle_button</item>
+    </style>
+
+
 </resources>

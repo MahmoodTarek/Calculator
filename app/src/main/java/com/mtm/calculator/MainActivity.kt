@@ -115,9 +115,11 @@ class MainActivity : AppCompatActivity() {
     fun onNumberClick(view: View) {
         setClickAnimation(view)
         val newDigit = prepareClickAction(view)
+        val previousInput = binding.txPrevOperation.text.toString()
 
-        binding.txOperation.text =
-            if (currentInput == "0") newDigit else currentInput + newDigit
+        if (previousInput.isNotEmpty()) binding.txPrevOperation.text = ""
+        else if (currentInput == "0") binding.txOperation.text = newDigit
+        else binding.txOperation.text = currentInput.plus(newDigit)
     }
 
     fun onOperationClick(view: View) {

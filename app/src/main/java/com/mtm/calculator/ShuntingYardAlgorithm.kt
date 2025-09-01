@@ -20,6 +20,7 @@ class ShuntingYardAlgorithm {
                 token.toDoubleOrNull() != null -> {
                     postfix.append(token).append(" ")
                 }
+
                 token in OPERATORS -> {
                     val curOp = token[0]
                     while (ops.isNotEmpty() && priority(ops.first()) >= priority(curOp)) {
@@ -45,13 +46,18 @@ class ShuntingYardAlgorithm {
             when {
                 token.toDoubleOrNull() != null -> numbers.addFirst(token.toDouble())
                 token in OPERATORS -> {
-                    val firstNumber = numbers.removeFirst()
-                    val secondNumber = numbers.removeFirst()
-                    val res = calculate(token, firstNumber, secondNumber)
 
-                    if (res.isNaN() || res.isInfinite()) {
-                        throw ArithmeticException("Invalid result")
-                    }
+                    val operand1 = numbers.removeFirst()
+                    val operand2 = numbers.removeFirst()
+
+                    val res = calculate(
+                        operation = token,
+                        firstNumber = operand2,
+                        secondNumber = operand1
+                    )
+
+                    if (res.isNaN() || res.isInfinite()) throw ArithmeticException("Invalid result")
+
                     numbers.addFirst(res)
                 }
             }
@@ -85,15 +91,18 @@ class ShuntingYardAlgorithm {
         return when (operation) {
             "+" -> firstNumber + secondNumber
             "-" -> firstNumber - secondNumber
+            "+-" -> firstNumber + -secondNumber
             "x" -> firstNumber * secondNumber
             "/" -> {
                 if (secondNumber == 0.0) throw ArithmeticException("Division by zero")
                 firstNumber / secondNumber
             }
+
             "%" -> {
                 if (secondNumber == 0.0) throw ArithmeticException("Division by zero")
                 firstNumber % secondNumber
             }
+
             else -> throw IllegalArgumentException("Unknown operator: $operation")
         }
     }
@@ -109,6 +118,6 @@ class ShuntingYardAlgorithm {
     }
 
     companion object {
-        private val OPERATORS = listOf("+", "-", "x", "/", "%")
+        private val OPERATORS = listOf("+", "-", "+-", "x", "/", "%")
     }
 }

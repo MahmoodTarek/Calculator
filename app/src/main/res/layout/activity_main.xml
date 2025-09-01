@@ -252,6 +252,7 @@
         style="@style/CalcButton.numbers"
         android:layout_marginBottom="32.dp"
         android:text="@string/plus_minus"
+        android:onClick="onOperationClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/btn_zero"
         app:layout_constraintHorizontal_chainStyle="spread"

@@ -33,20 +33,31 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tx_prev_operation"
+        <HorizontalScrollView
+            android:id="@+id/prev_expression"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium_large"
-            android:gravity="end"
-            android:maxLines="4"
-            android:textColor="@color/light_brown"
-            android:textSize="@dimen/text_small"
             android:layout_marginTop="@dimen/margin_medium_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="4444444444444444455" />
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/tx_prev_operation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_medium_large"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:maxLines="4"
+                android:textColor="@color/light_brown"
+                android:textSize="@dimen/text_small"
+
+                tools:text="4444444444444444455" />
+        </HorizontalScrollView>
+
+
 
         <HorizontalScrollView
             android:id="@+id/current_expression"
@@ -54,7 +65,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tx_prev_operation">
+            app:layout_constraintTop_toBottomOf="@+id/prev_expression">
 
             <TextView
                 android:id="@+id/tx_operation"

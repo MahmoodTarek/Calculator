@@ -167,11 +167,17 @@ class MainActivity : AppCompatActivity() {
         val textLength = textView.text.toString().length
         val textSize = when {
             textLength <= 10 -> 36f
-            textLength <= 15 -> 32f
-            textLength <= 20 -> 28f
-            textLength <= 25 -> 24f
-            else -> 20f
+            textLength <= 20 -> 32f
+            else -> 28f
         }
         textView.textSize = textSize
+
+        autoScrollToEnd()
+    }
+
+    private fun autoScrollToEnd() {
+        binding
+            .currentExpression
+            .post { binding.currentExpression.fullScroll(View.FOCUS_RIGHT) }
     }
 }

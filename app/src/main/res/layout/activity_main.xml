@@ -45,26 +45,33 @@
             android:maxLines="4"
             android:textColor="@color/light_brown"
             android:textSize="@dimen/text_small"
-            app:layout_constraintBottom_toTopOf="@+id/tx_operation"
+            app:layout_constraintBottom_toTopOf="@+id/current_expression"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="4444444444444444455" />
 
-        <TextView
-            android:id="@+id/tx_operation"
+        <HorizontalScrollView
+            android:id="@+id/current_expression"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_medium_large"
-            android:layout_marginBottom="@dimen/margin_medium_large"
-            android:gravity="end"
-            android:maxLines="4"
-            android:text="@string/_0"
-            android:textColor="@color/brown"
-            android:textSize="@dimen/text_large"
             app:layout_constraintBottom_toTopOf="@+id/view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="4444444444444444455" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tx_operation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginBottom="@dimen/margin_medium_large"
+                android:gravity="end"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/margin_small"
+                android:text="@string/_0"
+                android:textColor="@color/brown"
+                android:textSize="@dimen/text_large"
+                tools:text="4444444444444444455" />
+        </HorizontalScrollView>
 
         <View
             android:id="@+id/view"
@@ -76,6 +83,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
